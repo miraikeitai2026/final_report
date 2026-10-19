@@ -1,0 +1,64 @@
+\def\ProjectLeaderA#1#2{%
+  \gdef\@ProjectLeaderA{%
+  \hskip1.5zw #1\hskip1.5zw #2}}
+\def\ProjectLeaderB#1#2{%
+  \gdef\@ProjectLeaderB{%
+  \hskip1.5zw #1\hskip1.5zw #2}}
+\def\ProjectLeaderC#1#2{%
+  \gdef\@ProjectLeaderC{%
+  \hskip1.5zw #1\hskip1.5zw #2}}
+\def\ProjectLeaderD#1#2{%
+  \gdef\@ProjectLeaderD{%
+  \hskip1.5zw #1\hskip1.5zw #2}}
+\def\GroupLeaderA#1#2{%
+  \gdef\@GroupLeaderA{%
+  \hskip1.5zw #1\hskip1.5zw #2}}
+\def\GroupLeaderB#1#2{%
+  \gdef\@GroupLeaderB{%
+  \hskip1.5zw #1\hskip1.5zw #2}}
+\def\GroupLeaderC#1#2{%
+  \gdef\@GroupLeaderC{%
+  \hskip1.5zw #1\hskip1.5zw #2}}
+
+\def\@maketitle{%
+  \begingroup
+  \begin{titlepage}%
+    \let\footnotesize\small
+    \let\footnoterule\relax
+    \let\footnote\relax
+    \begin{center}%
+    \thispagestyle{empty}%
+      {\Large\headfont 公立はこだて未来大学~\@Year~年度\space
+        システム情報科学実習\par
+        グループ報告書}\par\s@vskip
+      {\headfont Future~University~Hakodate\space\@Year\space
+      Systems\space Information\space Science Practice%
+         \space Group~Report}\par\s@vskip
+      {\headfont プロジェクト番号/Project~No.}\par\@ProjectNumber\par\m@vskip
+      {\large\headfont プロジェクト名}\par\@jProjectName\par
+      {\large\headfont Project Name}\par\@eProjectName\par\m@vskip
+      {\large\headfont グループ名}\par\@jGroupName\par
+      {\large\headfont Group Name}\par\@eGroupName\par\m@vskip
+      {\large\headfont プロジェクトリーダー/Project~Leader}\par
+        \@ProjectLeaderA\hfill\par%
+        \ifdefined\@ProjectLeaderB\@ProjectLeaderB\hfill\par\fi%
+        \ifdefined\@ProjectLeaderC\@ProjectLeaderC\hfill\par\fi%
+        \m@vskip
+      {\large\headfont グループリーダー/Group~Leader}\par
+        \@GroupLeaderA\hfill\par%
+        \ifdefined\@GroupLeaderB\@GroupLeaderB\hfill\par\fi%
+        \ifdefined\@GroupLeaderC\@GroupLeaderC\hfill\par\fi%
+        \m@vskip\newpage
+      {\large\headfont グループメンバー/Group~Member}\par
+        \mbox{\vbox{\@show@members}}\par\m@vskip
+      {\large\headfont 指導教員}\par\show@jadvisor\par
+      {\large\headfont Advisor}\par\show@eadvisor\par\m@vskip
+      {\large\headfont 提出日}\par\@jdate\par
+      {\large\headfont Date of Submission}\par\@edate
+    \end{center}%
+    \vfil\null%
+  \end{titlepage}%
+  \endgroup
+  \setcounter{footnote}{0}%
+  \reset@title% ここでレジスタの開放
+  }%

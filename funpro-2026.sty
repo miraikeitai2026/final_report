@@ -18,7 +18,7 @@
 %% LaTeX version 1999/12/01 or later.
 %% 
 \NeedsTeXFormat{pLaTeX2e}
-\ProvidesPackage{funpro}
+\ProvidesPackage{funpro-2026}
    [2004/11/25 v2.0 Thor]
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[obeyspaces,spaces]{url}
@@ -27,13 +27,19 @@
 \newif\if@mid@
 \DeclareOption{middle}{\@mid@true}
 \DeclareOption{final}{\@mid@false}
+\newif\if@uplatex
+\DeclareOption{uplatex}{\@uplatextrue}
 \ProcessOptions\relax
 \def\mid@fin#1#2{\if@mid@ #1\else#2\fi}
 \let\midorfin\mid@fin
-\DeclareFontShape{JY1}{gt}{m}{sc}{<->ssub*gt/m/n}{}
-\DeclareFontShape{JT1}{gt}{m}{sc}{<->ssub*gt/m/n}{}
-\DeclareFontShape{JY1}{gt}{bx}{it}{<->ssub*gt/m/n}{}
-\DeclareFontShape{JT1}{gt}{bx}{it}{<->ssub*gt/m/n}{}
+\if@uplatex
+ \relax
+\else
+ \DeclareFontShape{JY1}{gt}{m}{sc}{<->ssub*gt/m/n}{}
+ \DeclareFontShape{JT1}{gt}{m}{sc}{<->ssub*gt/m/n}{}
+ \DeclareFontShape{JY1}{gt}{bx}{it}{<->ssub*gt/m/n}{}
+ \DeclareFontShape{JT1}{gt}{bx}{it}{<->ssub*gt/m/n}{}
+\fi
 \newdimen\fullwidth
 \headheight=2\topskip
 \headsep=1zw

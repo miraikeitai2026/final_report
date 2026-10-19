@@ -1,11 +1,13 @@
 ﻿% プロジェクト学習グループ報告書テンプレート ver.1.1 (utf-8)
 
 % 両面印刷する場合は `openany' を削除する
-\documentclass[openany,11pt,papersize,dvipdfm]{jsbook}
+\documentclass[openany,11pt,papersize,dvipdfm,uplatex]{jsbook}
 
 % 報告書提出用スタイルファイル
 \usepackage[middle]{funpro-2026}%中間報告書
 %\usepackage[final]{funpro-2026}%最終報告書
+
+\usepackage{multi-leader}
 
 % 画像ファイル (EPS, EPDF, PNG) を読み込むために
 \usepackage{graphicx}
@@ -19,6 +21,10 @@
 %\newcommand{\fake}[1]{\whiledo{\thehoge<70}{#1\stepcounter{hoge}}%
 %  \setcounter{hoge}{0}}
 % <-- ここまで 削除してもよい
+
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{pxjahyper}
 
 % 年度の指定
 \thisYear{2026}
@@ -39,24 +45,51 @@
 \jGroupName{グループ~A}
 \eGroupName{Group~A}
 
+\makeatletter
+\hypersetup{%
+ bookmarksnumbered=true,%
+ setpagesize=false,%
+ colorlinks=false,%
+ linkbordercolor={0.8 0.8 0.8},%
+ citebordercolor={0.8 0.8 0.8},%
+ pdfborder={0 0 0.6},%
+ % urlcolor=black,linkcolor=black,citecolor=black,%
+ pdftitle={\@jProjectName},%
+ pdfauthor={\@jProjectName},%
+ pdfsubject={公立はこだて未来大学 システム情報科学実習グループ報告書},%
+ pdfstartview={FitH},%
+ hidelinks,% 目次やリンクテキストの周囲の枠を消す
+ bookmarksopen=false,%
+ bookmarkstype=toc,%
+}
+\makeatother
+
 % プロジェクトリーダ      注意：学籍番号不用
-\ProjectLeader{未来花子}{Hanako~Mirai}
+\ProjectLeaderA{未来~花子}{Hanako~Mirai}
+\ProjectLeaderB{未来~花}{Hana~Mirai}
+% \ProjectLeaderC{}{}
+% \ProjectLeaderD{}{}
 
 % グループリーダ      注意：学籍番号不用
-\GroupLeader  {未来太郎}{Taro~Mirai}
+\GroupLeaderA  {未来~太郎}{Taro~Mirai}
+\GroupLeaderB  {未来~郎}{Ro~Mirai}
+\GroupLeaderC  {未来~たろう}{Taro~Mirai}
 
 % メンバー数
-\SumOfMembers{9}
+\SumOfMembers{12}
 % グループメンバ      注意：学籍番号不用
-\GroupMember  {1}{函館太郎}{Taro~Hakodate}
-\GroupMember  {2}{函館花子}{Hanako~Hakodate}
-\GroupMember  {3}{北海太郎}{Taro~Hokkai}
-\GroupMember  {4}{北海花子}{Hanako~Hokkai}
-\GroupMember  {5}{未来花子}{Hanako~Mirai}
-\GroupMember  {6}{未来一郎}{Ichiro~Mirai}
-\GroupMember  {7}{未来二朗}{Jiro~Mirai}
-\GroupMember  {8}{未来三郎}{Saburo~Mirai}
-\GroupMember  {9}{未来敬祐}{Keisuke~Mirai}
+\GroupMember  {1}{函館~太郎}{Taro~Hakodate}
+\GroupMember  {2}{函館~花子}{Hanako~Hakodate}
+\GroupMember  {3}{北海~太郎}{Taro~Hokkai}
+\GroupMember  {4}{北海~花子}{Hanako~Hokkai}
+\GroupMember  {5}{未来~花子}{Hanako~Mirai}
+\GroupMember  {6}{未来~一郎}{Ichiro~Mirai}
+\GroupMember  {7}{未来~二朗}{Jiro~Mirai}
+\GroupMember  {8}{未来~三郎}{Saburo~Mirai}
+\GroupMember  {9}{未来~敬祐}{Keisuke~Mirai}
+% 欠番にすると空行が入る
+\GroupMember  {11}{北海~太郎}{Taro~Hokkai}
+\GroupMember  {12}{鈴木~次郎}{Jiro~Suzuki}
 
 % 指導教員
 \jadvisor{指導刷蔵,指導刷子,副出刷子,福田刷男}
